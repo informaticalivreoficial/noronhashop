@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noronha Shop - Compra e Transporte para Fernando de Noronha</title>
+
+    <meta name="description" content="Descubra os melhores produtos e serviços exclusivos em Fernando de Noronha. Entrega rápida e atendimento local.">
+    <meta name="keywords" content="Noronha, compras, loja, ecommerce, turismo, entrega">
+    <meta name="author" content="NoronhaShop">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="NoronhaShop - A melhor experiência de compras em Noronha">
+    <meta property="og:description" content="Produtos e serviços exclusivos em Noronha. Confira!">
+    <meta property="og:image" content="https://noronhashop.com.br/assets/images/metaimg.png">
+    <meta property="og:url" content="https://noronhashop.com.br">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NoronhaShop">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NoronhaShop - A melhor experiência de compras em Noronha">
+    <meta name="twitter:description" content="Produtos e serviços exclusivos em Noronha. Confira!">
+    <meta name="twitter:image" content="https://noronhashop.com.br/assets/images/metaimg.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-Cm2C6uVn.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-Cm2C6uVn.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --turquoise: #1AC8ED;
+            --water-green: #5FCB95;
+            --sand: #F2E3CB;
+            --dark-blue: #0B5AA0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #333;
+        }
+        .bg-turquoise {
+            background-color: var(--turquoise);
+        }
+        .bg-water-green {
+            background-color: var(--water-green);
+        }
+        .bg-sand {
+            background-color: var(--sand);
+        }
+        .bg-dark-blue {
+            background-color: var(--dark-blue);
+        }
+        .text-turquoise {
+            color: var(--turquoise);
+        }
+        .text-water-green {
+            color: var(--water-green);
+        }
+        .text-sand {
+            color: var(--sand);
+        }
+        .text-dark-blue {
+            color: var(--dark-blue);
+        }
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .hero-wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 70px;
+        }
+        .hero-wave .shape-fill {
+            fill: #FFFFFF;
+        }
+        .wave-divider {
+            position: relative;
+            height: 70px;
+            overflow: hidden;
+        }
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .process-step {
+            position: relative;
+        }
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            transform: translate(0, -50%);
+            width: 100%;
+            height: 2px;
+            background-color: var(--water-green);
+            z-index: 0;
+        }
+        .step-number {
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/index-DYF2zKFq.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BfZO52Cs.css">
+</head>
+<body>
+    <!-- Header -->
+    <header x-data="{ open: false }" class="bg-white py-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-dark-blue">Noronha<span class="text-turquoise">Shop</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-10">
+                <a href="#inicio" class="text-dark-blue hover:text-turquoise transition">Início</a>
+                <a href="#servicos" class="text-dark-blue hover:text-turquoise transition">Serviços</a>
+                <a href="#como-funciona" class="text-dark-blue hover:text-turquoise transition">Como Funciona</a>
+                <a href="#contato" class="text-dark-blue hover:text-turquoise transition">Contato</a>
+            </nav>
+            <div class="md:hidden">
+                <button @click="open = !open" class="text-dark-blue focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <nav x-show="open" x-transition class="md:hidden px-6 pt-4 pb-6 space-y-4 bg-white">
+            <a href="#inicio" class="block text-dark-blue hover:text-turquoise transition">Início</a>
+            <a href="#servicos" class="block text-dark-blue hover:text-turquoise transition">Serviços</a>
+            <a href="#como-funciona" class="block text-dark-blue hover:text-turquoise transition">Como Funciona</a>
+            <a href="#contato" class="block text-dark-blue hover:text-turquoise transition">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-turquoise py-20 md:py-32">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">Seu acesso fácil a produtos continentais em Fernando de Noronha</h2>
+                    <p class="text-white text-xl mb-8">Facilitamos o transporte de mercadorias para a ilha com eficiência, segurança e preços justos.</p>
+                    <a target="_blank" href="https://wa.me/5512991385030" class="bg-white text-dark-blue font-bold py-3 px-8 rounded-full hover:bg-sand hover:text-dark-blue transition duration-300 inline-flex items-center">
+                        <span>Fale Conosco</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="/assets/harmonia-DMtdnxIa.jpg" alt="Embarcação para transporte de cargas" class="rounded-lg shadow-2xl w-full md:max-w-lg">
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold text-dark-blue mb-4">Por que escolher nossos serviços?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Entendemos os desafios logísticos de Fernando de Noronha. Nossa solução completa facilita o acesso a produtos do continente sem complicações.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center service-card border-t-4 border-turquoise">
+                    <div class="bg-turquoise inline-flex p-4 rounded-full text-white mb-6">
+                        <i class="fas fa-ship text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-blue">Transporte Marítimo Confiável</h3>
+                    <p class="text-gray-600">Contamos com embarcações seguras e especializadas para transportar suas mercadorias com cuidado e pontualidade.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center service-card border-t-4 border-water-green">
+                    <div class="bg-water-green inline-flex p-4 rounded-full text-white mb-6">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-blue">Compra de Produtos</h3>
+                    <p class="text-gray-600">Realizamos as compras que você precisa no continente, poupando seu tempo e garantindo os melhores preços.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center service-card border-t-4 border-dark-blue">
+                    <div class="bg-dark-blue inline-flex p-4 rounded-full text-white mb-6">
+                        <i class="fas fa-truck text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-blue">Entrega na Ilha</h3>
+                    <p class="text-gray-600">Fazemos a entrega diretamente no local que você precisar em Fernando de Noronha, com praticidade e eficiência.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-sand">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-blue mb-4">Nossos Serviços</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Oferecemos soluções completas para o transporte de mercadorias e produtos para Fernando de Noronha.</p>
+            </div>
+            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+                <div class="md:w-1/2 bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="/assets/bomgo-CiI7wXez.png" alt="Transporte terrestre" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-dark-blue">Transporte de Mercadorias</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Coleta e Transporte de mercadorias</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Envio de materiais de construção</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Transporte de móveis e eletrodomésticos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Equipamentos de hotelaria e restaurantes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="/assets/harmonia-DMtdnxIa.jpg" alt="Transporte marítimo" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-dark-blue">Serviço de Compras</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Compra de alimentos e suprimentos para pousadas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Aquisição de produtos de difícil acesso na ilha</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Negociação com fornecedores para melhores preços</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-water-green mt-1 mr-2"></i>
+                                <span>Compra e envio de equipamentos especializados</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="como-funciona" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-blue mb-4">Como Funciona</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Um processo simples e eficiente para atender suas necessidades.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="text-center process-step">
+                    <div class="step-number bg-white mx-auto mb-6 w-20 h-20 rounded-full flex items-center justify-center border-4 border-turquoise">
+                        <span class="text-2xl font-bold text-dark-blue">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Contato</h3>
+                    <p class="text-gray-600">Entre em contato via WhatsApp para informar suas necessidades.</p>
+                </div>
+                <div class="text-center process-step">
+                    <div class="step-number bg-white mx-auto mb-6 w-20 h-20 rounded-full flex items-center justify-center border-4 border-water-green">
+                        <span class="text-2xl font-bold text-dark-blue">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Orçamento</h3>
+                    <p class="text-gray-600">Receba um orçamento detalhado e transparente.</p>
+                </div>
+                <div class="text-center process-step">
+                    <div class="step-number bg-white mx-auto mb-6 w-20 h-20 rounded-full flex items-center justify-center border-4 border-sand">
+                        <span class="text-2xl font-bold text-dark-blue">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Processamento</h3>
+                    <p class="text-gray-600">Realizamos as compras e organizamos o transporte.</p>
+                </div>
+                <div class="text-center process-step">
+                    <div class="step-number bg-white mx-auto mb-6 w-20 h-20 rounded-full flex items-center justify-center border-4 border-dark-blue">
+                        <span class="text-2xl font-bold text-dark-blue">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Entrega</h3>
+                    <p class="text-gray-600">Entregamos seus produtos diretamente em Fernando de Noronha.</p>
+                </div>
+            </div>
+            
+            <div class="bg-turquoise bg-opacity-10 p-8 rounded-xl">
+                <h3 class="text-xl font-bold mb-4 text-dark-blue">Prazos de Entrega</h3>
+                <p class="mb-4">Os prazos de entrega podem variar de acordo com o tipo de mercadoria e a disponibilidade de embarcações:</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-clock text-turquoise mr-2"></i>
+                        <span>Produtos de consumo básico: 7 a 10 dias</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-clock text-turquoise mr-2"></i>
+                        <span>Materiais de construção: 10 a 15 dias</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-clock text-turquoise mr-2"></i>
+                        <span>Móveis e eletrodomésticos: 15 a 20 dias</span>
+                    </li>
+                </ul>
+                <p class="mt-4 text-sm italic">* Os prazos são estimados e podem variar conforme condições climáticas e disponibilidade de transporte.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section 
+    <section class="py-20 bg-sand">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-blue mb-4">O Que Nossos Clientes Dizem</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">A satisfação de nossos clientes é nossa maior prioridade.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Serviço impecável! Consegui enviar todos os materiais para reformar minha pousada sem nenhuma dor de cabeça. Recomendo fortemente."</p>
+                    <div class="flex items-center">
+                        <div class="bg-turquoise w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">R</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Ricardo Mendes</h4>
+                            <p class="text-sm text-gray-500">Proprietário de Pousada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Solução perfeita para quem mora na ilha. Agora consigo ter acesso a produtos que antes eram impossíveis de encontrar por aqui."</p>
+                    <div class="flex items-center">
+                        <div class="bg-water-green w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Marina Costa</h4>
+                            <p class="text-sm text-gray-500">Moradora de Noronha</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Meu restaurante nunca ficou desabastecido depois que comecei a utilizar este serviço. Equipe muito comprometida e atenciosa!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-dark-blue w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">F</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Felipe Santos</h4>
+                            <p class="text-sm text-gray-500">Proprietário de Restaurante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-blue mb-4">Entre em Contato</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Estamos à disposição para ajudar você. Faça seu orçamento sem compromisso.</p>
+            </div>
+            <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:w-1/2 bg-turquoise p-10 text-white">
+                    <h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="mr-4">
+                                <i class="fas fa-phone bg-white text-turquoise p-3 rounded-full"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">WhatsApp</h4>
+                                <p><a href="tel:+5512991385030">(12) 99138-5030</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mr-4">
+                                <i class="fas fa-envelope bg-white text-turquoise p-3 rounded-full"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p><a href="mailto:atendimento@noronhashop.com.br">atendimento@noronhashop.com.br</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mr-4">
+                                <i class="fas fa-clock bg-white text-turquoise p-3 rounded-full"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Horário de Atendimento</h4>
+                                <p>Segunda a Sexta: 8h às 18h</p>
+                                <p>Sábado: 8h às 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-10 flex flex-col items-center justify-center">
+                    <h3 class="text-2xl font-bold mb-6 text-dark-blue">Escaneie o QR Code</h3>
+                    <img src="/assets/qr-DySOqPSi.png" alt="Atendimento NoronhaShop" class="w-48 h-48 mb-6">
+                    <p class="text-center text-gray-600 mb-6">Ou clique no botão abaixo para iniciar uma conversa</p>
+                    <a href="https://wa.me/5512991385030" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition duration-300">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                        <span>Falar pelo WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-sand">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark-blue mb-4">Perguntas Frequentes</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Respostas para as dúvidas mais comuns sobre nossos serviços.</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Qual o peso máximo que posso enviar?</h3>
+                    <p class="text-gray-600">Não há limite específico de peso, mas cargas muito pesadas podem ter tarifas especiais. Entre em contato para avaliarmos seu caso.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Quanto tempo leva para os produtos chegarem?</h3>
+                    <p class="text-gray-600">O prazo médio é de 7 a 20 dias, dependendo do tipo de produto e condições climáticas para navegação.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Como é feito o pagamento do serviço?</h3>
+                    <p class="text-gray-600">Trabalhamos com PIX, transferência bancária ou cartão de crédito. Geralmente solicitamos um adiantamento para iniciar as compras.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Posso acompanhar minha encomenda?</h3>
+                    <p class="text-gray-600">Sim! Enviamos atualizações regulares sobre o status da sua compra e transporte via WhatsApp.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2 text-dark-blue">Vocês entregam em toda a ilha?</h3>
+                    <p class="text-gray-600">Sim, fazemos entregas em qualquer ponto de Fernando de Noronha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-dark-blue text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-6">Pronto para facilitar sua vida em Noronha?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">Entre em contato hoje mesmo e descubra como podemos ajudar a transportar seus produtos com segurança e eficiência.</p>
+            <a href="https://wa.me/5512991385030" target="_blank" class="bg-white text-dark-blue hover:bg-sand transition duration-300 font-bold py-4 px-10 rounded-full text-lg inline-flex items-center">
+                <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                <span>Fale Conosco Agora</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between mb-8">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Noronha<span class="text-turquoise">Shop</span></h3>
+                    <p class="mb-4">Facilitando o acesso a produtos continentais em Fernando de Noronha.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-turquoise transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-turquoise transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-turquoise transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-turquoise transition">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-turquoise transition">Serviços</a></li>
+                        <li><a href="#como-funciona" class="hover:text-turquoise transition">Como Funciona</a></li>
+                        <li><a href="#contato" class="hover:text-turquoise transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="md:w-1/3">
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-turquoise"></i>
+                            <a href="tel:+5512991385030"><span>(12) 99138-5030</span></a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-turquoise"></i>
+                            <a href="mailto:atendimento@noronhashop.com.br"><span>atendimento@noronhashop.com.br</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p>&copy; 2025 NoronhaShop. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</body>
+</html>
